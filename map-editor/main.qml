@@ -1,7 +1,7 @@
 import QtQuick 2.7
-import QtQuick.Window 2.2
+import QtQuick.Controls 1.4
 
-Window {
+ApplicationWindow {
     id: root
     visible: true
     width: 700
@@ -11,7 +11,15 @@ Window {
     property var dragPointComponent
     property var dragPoints: []
 
-
+    menuBar: MenuBar {
+        Menu {
+            title: "File"
+            MenuItem { text: "New Map" }
+            MenuItem { text: "Open Existing Map" }
+            MenuSeparator { }
+            MenuItem { text: "Save Map" }
+        }
+    }
 
     MapBackground { }
 
@@ -67,9 +75,9 @@ Window {
             createPoint(0, 695, 200); // right
             createPoint(0, 345, 200); // middle
             createPoint(0, -5, 200); // left
-            dragPoints[0].dragTarget = null
+            dragPoints[0].dragAxis = Drag.YAxis
             dragPoints[0].canCreateOnLeft = false
-            dragPoints[2].dragTarget = null
+            dragPoints[2].dragAxis = Drag.YAxis
             dragPoints[2].canCreateOnRight = false
         }
     }

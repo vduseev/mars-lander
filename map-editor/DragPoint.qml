@@ -7,6 +7,7 @@ Rectangle {
     property int centerX: x + point.width / 2
     property int centerY: y + point.height / 2
     property var dragTarget: point
+    property var dragAxis: Drag.XAndYAxis
 
     property bool canCreateOnLeft: true
     property bool canCreateOnRight: true
@@ -41,6 +42,7 @@ Rectangle {
         anchors.fill: parent
         drag.target: dragTarget
         drag.threshold: 1
+        drag.axis: dragAxis
         acceptedButtons: Qt.LeftButton | Qt.RightButton
 
         onClicked: {
