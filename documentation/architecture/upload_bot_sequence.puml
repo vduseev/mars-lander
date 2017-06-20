@@ -1,0 +1,8 @@
+@startuml
+
+actor User
+participant Server
+
+User ->
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+
+actor User
+participant Server
+participant Bot
+
+User -> Server : Start bot on server
+activate Server
+
+Server -> Server : Read map file
+
+Server -> Bot : Start Bot subprocess
+activate Bot
+Server -> Bot : Send init input
+Server -> Bot : Send frame input
+
+Bot -> Server : Send frame output
+Server -> Server : Calculate game frame
+...gameloop running...
+
+Server -> Bot : Stop Bot subprocess
+destroy Bot
+
+Server -> Server : Save game recording
+Server -> User : Print "finish" message
+deactivate Server
+
+@enduml

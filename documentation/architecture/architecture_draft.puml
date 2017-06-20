@@ -1,0 +1,45 @@
+@startuml
+
+package "Game Server" {
+  component [Server.exe] as server
+  package "Subprocess" {
+    component [Bot.exe] as bot
+    component [Referee.exe] as referee
+  }
+  interface "PIPEs" as pipe
+  interface "Terminal" as terminal
+  interface "REST" as rest
+}
+
+component [Visualization.exe] as visual
+interface "game_recording.log" as game_recording
+
+visual <- game_recording
+note bottom of visual
+  Visualization reads map info and frames
+  from recorded game file.
+  It also draws additional debug info
+  from Bot itself.
+end note
+
+game_recording <- server
+
+server - pipe
+note top of server
+  Server communicates with Bot
+  via standard input and output
+end note
+
+pipe - bot
+note left of bot
+  Bot might consist of algorithm,
+  trainer neural netwrok, or be
+  a quite sophisticated program itself.
+end note
+
+pipe - referee
+
+server - terminal
+server - rest
+
+@enduml
