@@ -1,5 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 1.4
+import QtQuick.Dialogs 1.2
+import MapEditor.Utilities 1.0
 
 ApplicationWindow {
     id: root
@@ -22,10 +24,30 @@ ApplicationWindow {
     menuBar: MenuBar {
         Menu {
             title: "File"
-            MenuItem { text: "New Map" }
-            MenuItem { text: "Open Existing Map" }
+            MenuItem {
+                text: "New Map"
+                onTriggered: {
+                    resetMap()
+                    createInitialPoints()
+                }
+            }
+            MenuItem {
+                text: "Open Existing Map";
+                onTriggered: {
+                    fileDialog.selectExisting = true
+                    fileDialog.open()
+                    fileDialog.visible = true
+                }
+            }
             MenuSeparator { }
-            MenuItem { text: "Save Map" }
+            MenuItem {
+                text: "Save Map"
+                onTriggered: {
+                    fileDialog.selectExisting = false
+                    fileDialog.open()
+                    fileDialog.visible = true
+                }
+            }
         }
     }
 
@@ -42,11 +64,28 @@ ApplicationWindow {
         }
     }
 
+    FileDialog {
+        id: fileDialog
+        title: "Please choose a file"
+        folder: shortcuts.home
+
+        property string mode: "open"
+
+        onAccepted: {
+            if (selectExisting === true) {
+                openMap(fileDialog.fileUrl)
+            } else if (selectExisting === false) {
+                saveMap(fileDialog.fileUrl)
+            }
+        }
+    }
+
     Component.onCompleted: {
         dragPointComponent = Qt.createComponent("DragPoint.qml");
         if (dragPointComponent == null) {
             console.log("DragPoint component is not created")
         } else {
+            resetMap()
             createInitialPoints()
         }
     }
@@ -81,7 +120,11 @@ ApplicationWindow {
             // Connect clone signal from point to actual function
             point.clone.connect(clonePoint)
             // Insert new node at correct index
-            dragPoints.splice(i, 0, point)
+            if (i >= dragPoints.length) {
+                dragPoints.push(point)
+            } else {
+                dragPoints.splice(i, 0, point)
+            }
         }
         redrawCanvas()
     }
@@ -122,5 +165,42 @@ ApplicationWindow {
         }
         // Color fill whole path
         ctx.stroke();
+    }
+
+    function openMap(fileUrl) {
+        var map = MapFile.open(fileUrl);
+        // less than 2 nodes
+        if (map.length < 4) {
+            console.log("Wrong open file", map.length)
+        } else if (map.length % 2 == 1) {
+            console.log("Non even", map.length)
+        } else {
+            resetMap()
+            createPoint(0, map[0], map[1]);
+            dragPoints[0].dragAxis = Drag.YAxis
+            dragPoints[0].canCreateOnLeft = false
+            for (var i = 2; i < map.length - 2; i += 2) {
+                createPoint(dragPoints.length, map[i], map[i + 1]);
+            }
+            createPoint(dragPoints.length, map[map.length - 2], map[map.length - 1]);
+            dragPoints[dragPoints.length - 1].dragAxis = Drag.YAxis
+            dragPoints[dragPoints.length - 1].canCreateOnRight = false
+        }
+    }
+
+    function saveMap(fileUrl) {
+        var map = []
+        for (var i = 0; i < dragPoints.length; i++) {
+            map.push(dragPoints[i].virtualX);
+            map.push(dragPoints[i].virtualY);
+        }
+        MapFile.save(fileUrl, map)
+    }
+
+    function resetMap() {
+        for (var i = 0; i < dragPoints.length; i++) {
+            dragPoints[i].destroy()
+        }
+        dragPoints = []
     }
 }
