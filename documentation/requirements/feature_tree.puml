@@ -1,0 +1,94 @@
+@startuml
+
+usecase mars_lander as "
+Mars Lander
+Simulator
+"
+
+/'FE-1 Visualization of a game'/
+usecase visualization as "
+FE-1
+Visualization
+"
+mars_lander -down- visualization
+'FE-1.UC-1 Play Simulation'
+usecase play_simulation as "
+UC-1
+Play Simulation
+"
+visualization -down- play_simulation
+'play_simulation functions'
+note bottom of play_simulation
+  1. same visualization as in actual game
+  2. play all frames
+  3. play slider to jump to any point
+  4. step by step play
+end note
+'FE-1.UC-2 Draw Debug Info'
+usecase draw_debug_info as "
+UC-2
+Draw Debug info
+"
+visualization -down- draw_debug_info
+'draw_debug_info functions'
+note bottom of draw_debug_info
+  1. draw text at given point in visualization
+  2. display debug output of bot and simulator
+  in a read-only text field under visualization
+  3. draw lines
+end note
+'FE-2 Use same bots as in game'
+usecase ide_integration as "
+FE-2
+IDE Integration
+"
+mars_lander -left- ide_integration
+'FE-2.UC-3 Work in your IDE'
+usecase work_in_ide as "
+UC-3
+Work in you IDE
+"
+ide_integration -left- work_in_ide
+'work_in_ide functions'
+note bottom of work_in_ide
+  1. simulator interacts with bot via stdin/stdout
+  2. simulator works with executable bot programs
+end note
+'FE-3 Edit Maps'
+usecase edit_game_maps as "
+FE-3
+Edit Game Maps
+"
+mars_lander -right- edit_game_maps
+'FE-3.UC-4 Use map editor'
+usecase use_map_editor as "
+UC-4
+Use Map Editor
+"
+edit_game_maps -right- use_map_editor
+'use_map_editor functions'
+note bottom of use_map_editor
+  1. create new maps by drag & drop of nodes
+  2. edit existing maps
+  3. save maps as files
+end note
+'FE-4 Train Neural Network'
+usecase train_neural_network as "
+FE-4
+Train Neural Network
+"
+mars_lander -up- train_neural_network
+'FE-4.UC-5 Train network'
+usecase use_genetic_algorithm as "
+UC-5
+Use Genetic Algorithm
+"
+train_neural_network -up- use_genetic_algorithm
+'use_genetic_algorithm functions'
+note top of use_genetic_algorithm
+  1. user creates wrapper program around his bots,
+  and wrapper interacts with simulator to run
+  thousands of simulations to train the network
+end note
+
+@enduml
