@@ -1,10 +1,15 @@
 # Mars Lander Simulator
 
 CodinGame Mars Lander simulation for neural network training.
-
 ![Visualization](https://image.ibb.co/fwXzsk/visualization.png)
 
-## Videos
+## What is This?
+
+## What Problems Does It Solve?
+
+## How It Works?
+
+## Demonstration
 Sorry, no videos yet.
 
 ## Feature tree
