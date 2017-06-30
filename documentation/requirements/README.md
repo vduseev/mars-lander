@@ -1,7 +1,6 @@
 # Mars Lander Simulator Requirements
 
-## Vision and Ideas
-A system allows us to run Mars Lander simulations locally on our desktops.
+* [Vision and Scope](/documentation/requirements/vision_and_scope)
 
 ### Referee
 * We can control referee via terminal
