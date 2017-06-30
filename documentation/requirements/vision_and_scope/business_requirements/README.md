@@ -14,20 +14,21 @@ better understanding of the development tactics applicable to software projects.
 
 ### Context
 As a group of developers spending our free time on CodinGame we did not find
-an easy way to train neural network in Mars Lander problem. We decided to
+an easy way to train a neural network in Mars Lander problem. We decided to
 build a tool that will allow us to do that.
-[Mars Lander - Episode 3 on CodinGame](https://www.codingame.com/training/expert/mars-lander-episode-3)
+Check the problem description:
+[Mars Lander - Episode 3 on CodinGame](https://www.codingame.com/training/expert/mars-lander-episode-3).
 
 ### History
 #### May, 2017
 We tried to solve Mars Lander problem at the end of the evening after a good
-bunch of drinks. We advanced to the second level where we were stuck with
+bunch of drinks. We advanced to the second level where we were stuck with a
 landing strategy.
 #### June, 2017
 We proceeded to the third level. Simple tactics did not work here.
 ![Mars Lander - Episode 3](https://image.ibb.co/bNiY8Q/mars_lander_episode_3.png)
 
-The map on level is quite complex and requires the lander to find a path to the
+The map of this level is quite complex and requires the lander to find a path to the
 landing zone. Implementing A* path finding by converting whole area to a graph
 did not appeal to us. We googled possible solutions with [Bezier](https://pomax.github.io/bezierinfo/) curves and
 after a discussion we found out that we are unable to come up with a beautiful
@@ -69,8 +70,8 @@ that will allow us to implement complex approaches to bot creation.
 8. Uploads bot's source code to CodinGame
 
 ### Critical interface and quality requirements
-* The system must provide amazingly simple to use API for a user in order for him
-to develop a bot in any language.
+* The system must provide amazingly simple to use API for a user enable bot
+development in any language.
 * The system must be very easy to run or start. No mega-dependencies.
 * The system must be flexible and allow user to configure performance of
 simulations.
