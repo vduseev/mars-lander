@@ -15,6 +15,6 @@ Sorry, no videos yet.
 ## Feature tree
 ![Feature Tree](https://image.ibb.co/cJrsCk/feature_tree.png)
 
-Please check following sections:
-* Requirements
+## Documentation
+* [Requirements](/documentation/requirements)
 * Architecture
