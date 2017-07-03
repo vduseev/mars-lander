@@ -85,6 +85,9 @@ development in any language.
 simulations.
 
 ## Business objectives <a name="business_objectives"></a>
+* Solve Mars Lander Ep.3 problem with Neural Network approach.
+* Develop a gold reference repository for solution that demonstrates high-class
+  software project evolution.
 * Earn 10 stars on GitHub within 3 months after project completion.
 
 ## Success metrics <a name="success_metrics"></a>
