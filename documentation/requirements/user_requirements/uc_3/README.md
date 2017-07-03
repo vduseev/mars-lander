@@ -13,10 +13,10 @@ Vagiz (July 3, 2017)
 * Bot Developer opens Map Editor.
 
 ## Preconditions
-* PRE-1. Simulation Player is provided with path to map file.
+* PRE-1. Map Editor is provided with path to map file.
 
 ## Postconditions
-* POST-1. Simulation Player displays opened map with.
+* POST-1. Map Editor displays opened map with.
 
 ## Normal Flow
 ![Normal Flow](https://image.ibb.co/jyQpnv/uc_3_flow.png)
