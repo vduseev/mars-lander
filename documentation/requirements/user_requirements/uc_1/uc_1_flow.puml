@@ -1,0 +1,33 @@
+@startuml
+
+start
+
+:Run Simulation;
+note left
+  Bot Developer or Bot Training Program
+  asks system to run a specific simulation.
+end note
+
+if (bot path specified?) then (no)
+  :Bot Not Found;
+  end
+elseif (referee path specified?) then (no)
+  :Referee Not Found;
+  end
+elseif (init data present?) then (no)
+  :No Data Found;
+  end
+else (preconditions\nsatisfied)
+endif
+:Execute Simulation;
+if (specific saving path provided?) then (yes)
+  :Save Under Specific Path;
+else (no)
+  :Save Under Default path
+   using **<bot name>-<time>.mls** format;
+endif
+:Return Success Code;
+
+stop
+
+@enduml

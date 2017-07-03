@@ -1,0 +1,22 @@
+@startuml
+
+caption Use Cases Diagram of Mars Lander Simulator
+'left to right direction
+
+skinparam ActorBackgroundColor<< Program >> Blue
+skinparam ActorBorderColor<< Program >> DarkSlateBlue
+
+actor :Bot Developer: as bot_developer << Human >>
+actor :Referee\nAlgorithm: as referee_algorithm << Program >>
+actor :Bot Algorithm: as bot_algorithm << Program >>
+actor :Bot Training\nAlgorithm: as bot_training_algorithm << Program >>
+
+rectangle system {
+  actor :Simulation\nServer: as simulation_server << Program >>
+
+  'Simulation Server's usecases'
+  usecase ()
+}
+
+
+@enduml

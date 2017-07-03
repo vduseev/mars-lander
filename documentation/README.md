@@ -1,5 +1,4 @@
-# Mars Lander simulator documentation
+# Mars Lander Simulator Documentation
 
 * [Requirements](/documentation/requirements)
-  * [Vision and Scope](/documentation/requirements/vision_and_scope)
 * Architecture
