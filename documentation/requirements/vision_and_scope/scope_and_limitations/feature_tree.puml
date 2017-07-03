@@ -1,0 +1,81 @@
+@startuml
+
+caption Feature Tree of Mars Lander Simulator
+
+skinparam usecase {
+  BackgroundColor<< System >> DarkSeaGreen
+  BorderColor<< System >> DarkSlateGray
+
+  BackgroundColor<< Feature>> YellowGreen
+  BorderColor<< Feature >> DarkSlateGray
+}
+
+usecase mars_lander << System >> as "
+Mars Lander
+Simulator
+"
+
+'FE-1 Train Neural Network'
+usecase train_neural_network << Feature >> as "
+FE-1: Train Neural Network
+"
+mars_lander -up- train_neural_network
+'FE-1.UC-1 Train network'
+usecase use_genetic_algorithm as "
+UC-1
+Use Genetic Algorithm
+"
+train_neural_network -up- use_genetic_algorithm
+'use_genetic_algorithm functions'
+note top of use_genetic_algorithm
+  1. user creates wrapper program around his bots,
+  and wrapper interacts with simulator to run
+  thousands of simulations to train the network
+end note
+'FE-1.UC-2 Edit Maps'
+usecase edit_game_maps as "
+UC-2
+Edit Game Maps
+"
+train_neural_network -up- edit_game_maps
+'edit_game_maps functions'
+note top of edit_game_maps
+  1. create new maps by drag & drop of nodes
+  2. edit existing maps
+  3. save maps as files
+end note
+
+'FE-2 Visualization of a game'
+usecase visualization << Feature >> as "
+FE-2: Advanced Visualization
+"
+mars_lander -down- visualization
+'FE-2.UC-3 Play Simulation'
+usecase play_simulation as "
+UC-3
+Play Simulation
+"
+visualization -down- play_simulation
+'play_simulation functions'
+note bottom of play_simulation
+  1. same visualization as in actual game
+  2. play all frames
+  3. play slider to jump to any point
+  4. step by step play
+end note
+'FE-2.UC-4 Draw Debug Info'
+usecase draw_debug_info as "
+UC-4
+Draw Primitives
+For Debugging
+"
+visualization -down- draw_debug_info
+'draw_debug_info functions'
+note bottom of draw_debug_info
+  1. draw text at given point in visualization
+  2. display debug output of bot and simulator
+  in a read-only text field under visualization
+  3. draw other primitives
+end note
+
+@enduml
