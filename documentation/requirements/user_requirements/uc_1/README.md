@@ -37,6 +37,7 @@ Vagiz (July 3, 2017)
 * 1.0.E1 Path to Bot Program not specified.
 * 1.0.E2 Path to Referee Program not specified.
 * 1.0.E3 Path to initialization data (maps) not specified.
+* 1.0.E4 Saving path for simulation recording not specified.
 
 ## Priority
 High priority, because this is the most basic action in simulator.
