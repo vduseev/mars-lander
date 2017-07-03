@@ -8,24 +8,23 @@ note left
   asks system to run a specific simulation.
 end note
 
-if (bot path specified?) then (no)
+if (bot path\nspecified?) then (no)
   :Bot Not Found;
   end
-elseif (referee path specified?) then (no)
+elseif (referee path\nspecified?) then (no)
   :Referee Not Found;
   end
-elseif (init data present?) then (no)
+elseif (init data\npath specified?) then (no)
   :No Data Found;
   end
+elseif (save path\nspecified?) then (no)
+  :Save Path
+  Not Specified;
+   end
 else (preconditions\nsatisfied)
 endif
 :Execute Simulation;
-if (specific saving path provided?) then (yes)
-  :Save Under Specific Path;
-else (no)
-  :Save Under Default path
-   using **<bot name>-<time>.mls** format;
-endif
+:Save Under Specific Path;
 :Return Success Code;
 
 stop

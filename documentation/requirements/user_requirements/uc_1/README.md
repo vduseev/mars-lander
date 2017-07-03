@@ -24,16 +24,19 @@ Vagiz (July 3, 2017)
 * PRE-5. Bot Developer provided paths to Initialization Data to Simulation
   Server.
 * PRE-6. Bot Developer provided simulation recording saving path
-  to Simulation Server, or Simulation Server knows default path to it
+  to Simulation Server.
 
 ## Postconditions
 * POST-1. Simulation results are saved to game recording file.
 * POST-2. Simulation Server returns success code to the caller.
 
 ## Normal Flow
-![Normal Flow](https://image.ibb.co/jZd0sv/uc_1_flow.png)
+![Normal Flow](https://image.ibb.co/gK9bza/uc_1_flow.png)
 
 ## Exceptions
+* 1.0.E1 Path to Bot Program not specified.
+* 1.0.E2 Path to Referee Program not specified.
+* 1.0.E3 Path to initialization data (maps) not specified.
 
 ## Priority
 High priority, because this is the most basic action in simulator.
