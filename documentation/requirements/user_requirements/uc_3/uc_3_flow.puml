@@ -1,0 +1,26 @@
+@startuml
+
+caption Use Case 3 - Edit Maps
+
+start
+
+:Open Map Editor;
+note left
+  Bot Developer opens
+  Map Editor program.
+end note
+
+:Open Map File;
+:Edit Map;
+
+if (save?) then (yes)
+  :Save File;
+else (no)
+  :Close File;
+endif
+
+:Close Map Editor;
+
+stop
+
+@enduml
