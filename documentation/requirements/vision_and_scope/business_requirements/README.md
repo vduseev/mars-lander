@@ -77,6 +77,11 @@ that will allow us to implement complex approaches to bot creation.
 7. User develops a bot that solves the problem
 8. Uploads bot's source code to CodinGame
 
+### Even list
+External event for Mars Lander Simulator system:
+* Simulator API is called.
+* User asks to play game recording.
+
 ### Critical interface and quality requirements
 * The system must provide amazingly simple to use API for a user enable bot
 development in any language.
