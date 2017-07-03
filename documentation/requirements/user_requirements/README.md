@@ -26,6 +26,10 @@
   Program that is able to run simulations as told by Bot Developer or Bot
   Trainer Executable. Saves results of simulations under specified path.
 
+* Simulation Player
+
+  Program that is able to play simulations recorded by Simulator.
+
 ## Use Cases
 * [UC-1 Run Simulation](/documentation/requirements/user_requirements/uc_1)
 * [UC-2 Play Simulation](/documentation/requirements/user_requirements/uc_2)

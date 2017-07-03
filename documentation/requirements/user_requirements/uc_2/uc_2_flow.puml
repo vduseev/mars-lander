@@ -1,0 +1,35 @@
+@startuml
+
+caption Use Case 2 - Play Simulation
+
+start
+
+:Open Simulation Player;
+note left
+  Bot Developer opens Simulation
+  Player program.
+end note
+
+:Open Simulation Recording File;
+
+while (close file?) is (no)
+  fork
+    :Play Simulation;
+  fork again
+    :Pause Simulation;
+  fork again
+    :Stop Simulation;
+  fork again
+    :Jump to;
+  fork again
+    :Step Forward;
+  fork again
+    :Step Backward;
+  end fork
+endwhile
+
+:Close File;
+
+stop
+
+@enduml
