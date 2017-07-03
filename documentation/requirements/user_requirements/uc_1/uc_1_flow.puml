@@ -2,10 +2,29 @@
 
 start
 
-:Run Simulation;
-note left
-  Bot Developer or Bot Training Program
-  asks system to run a specific simulation.
+fork
+  :Open Terminal or CMD;
+  note left
+    Bot Developer asks Simulator
+    to run a specific simulation.
+  end note
+fork again
+  :Start Simulator Subprocess;
+  note right
+    Bot Training Program asks Simulator
+    to run a specific simulation.
+  end note
+end fork
+
+:Call Simulator Binary
+With Specific Arguments;
+note right
+  **call format:**
+  ./server
+  --bot bots/test_bot
+  --referee referees/referee
+  --data maps/test_map.mlm
+  --save_path simulations/simulation_1.mls
 end note
 
 if (bot path\nspecified?) then (no)

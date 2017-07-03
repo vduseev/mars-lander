@@ -2,10 +2,10 @@
 
 ## Actors
 * Bot Developer
-* Bot Algorithm
-* Referee Algorithm
-* Bot Training Algorithm
-* Simulation Server
+* Bot Executable
+* Referee Executable
+* Bot Trainer Executable
+* Simulator
 
 ## Use Cases
 * [UC-1 Run Simulation](/documentation/requirements/user_requirements/uc_1)
