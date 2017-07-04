@@ -29,45 +29,45 @@ Copied from CodinGame website.
 
 ## Referee Rules
 
-### REFEREE-1 Map Width <a name="REFEREE-1"></a>
+##### *REFEREE-1* Map Width <a name="REFEREE-1"></a>
 Mars map is **7000m** wide.
 
-### REFEREE-2 Map Height <a name="REFEREE-2"></a>
+##### *REFEREE-2* Map Height <a name="REFEREE-2"></a>
 Mars map is **3000m** high.
 
-### REFEREE-3 Unique Landing Area <a name="REFEREE-3"></a>
+##### *REFEREE-3* Unique Landing Area <a name="REFEREE-3"></a>
 There is **only one** flat area on the map.
 It is called Landing Area.
 
-### REFEREE-4 Landing Area Width <a name="REFEREE-4"></a>
+##### *REFEREE-4* Landing Area Width <a name="REFEREE-4"></a>
 Landing area is at least **1000m** wide.
 
-### REFEREE-5 Tilt Angle Direction <a name="REFEREE-5"></a>
-Tilt angles < 0 result in counter clockwise rotation.
-Tilt angles > 0 result in clockwise rotation.
-Tilt angle = 0 results in lander being positioned vertically.
+##### *REFEREE-5* Tilt Angle Direction <a name="REFEREE-5"></a>
+* Tilt **angle < 0°** results in counter clockwise rotation.
+* Tilt **angle > 0°** results in clockwise rotation.
+* Tilt **angle = 0°** results in lander being positioned vertically.
 
-### REFEREE-6 Tilt Angle Range <a name="REFEREE-6"></a>
+##### *REFEREE-6* Tilt Angle Range <a name="REFEREE-6"></a>
 Acceptable tilt angle range is **-90° ≤ angle ≤ 90°**. Tilt angle is presented
 in degrees.
 
-### REFEREE-7 Rotation Speed <a name="REFEREE-7"></a>
+##### *REFEREE-7* Rotation Speed <a name="REFEREE-7"></a>
 Each frame actual rotation of lander is limited to the value of previous frame
 **+/-15°**.
 
-### REFEREE-8 Thrust Power Range <a name="REFEREE-8"></a>
+##### *REFEREE-8* Thrust Power Range <a name="REFEREE-8"></a>
 Thrust power is an integer number.
 Acceptable thrust power range is **0 ≤ Thrust ≤ 4**.
 
-### REFEREE-9 Thrust Power Change Speed <a name="REFEREE-9"></a>
+##### *REFEREE-9* Thrust Power Change Speed <a name="REFEREE-9"></a>
 Each frame actual thrust power of lander is limited to the value of previous
 frame **+/-1**.
 
-### REFEREE-10 Gravity <a name="REFEREE-10"></a>
+##### *REFEREE-10* Gravity <a name="REFEREE-10"></a>
 The game simulates a free fall without atmosphere.
 Gravity on Mars is **3.711 m/s²**.
 
-### REFEREE-11 Speed Calculation <a name="REFEREE-11"></a>
+##### *REFEREE-11* Speed Calculation <a name="REFEREE-11"></a>
 Each frame actual speed of lander is calculated as follows:
 
 *let* **converted_rotation** = **rotation** + **90°**;
@@ -82,30 +82,30 @@ Each frame actual speed of lander is calculated as follows:
 
 **h_speed_current** = **h_speed_previous** + **thrust_vertical_component** - **g**;
 
-### REFEREE-12 Fuel Consumption <a name="REFEREE-12"></a>
+##### *REFEREE-12* Fuel Consumption <a name="REFEREE-12"></a>
 Thrust power of N consumes N liters of fuel per frame.
 
-### REFEREE-13 Data Types of Simulator <a name="REFEREE-13"></a>
+##### *REFEREE-13* Data Types of Simulator <a name="REFEREE-13"></a>
 All data types representing physical values like position or speed are float.
 
-### REFEREE-14 Allowed Landing Angle <a name="REFEREE-14"></a>
-Lander must land in a vertical position (rotation = 0°).
+##### *REFEREE-14* Allowed Landing Angle <a name="REFEREE-14"></a>
+Lander must land in a vertical position (**rotation = 0°**).
 
-### REFEREE-15 Allowed Landing Vertical Speed <a name="REFEREE-15"></a>
-Lander Vertical Speed must be less than 40m/s.
+##### *REFEREE-15* Allowed Landing Vertical Speed <a name="REFEREE-15"></a>
+Lander Vertical Speed must be less than **40m/s**.
 
 **abs(v_speed)** ≤ **40**
 
-### REFEREE-16 Allowed Landing Horizontal Speed <a name="REFEREE-16"></a>
-Lander Horizontal Speed must be less than 20m/s.
+##### *REFEREE-16* Allowed Landing Horizontal Speed <a name="REFEREE-16"></a>
+Lander Horizontal Speed must be less than **20m/s**.
 
 **abs(h_speed)** ≤ **20**
 
-### REFEREE-17 Surface Touch <a name="REFEREE-17"></a>
+##### *REFEREE-17* Surface Touch <a name="REFEREE-17"></a>
 Lander touches the surface if a line of length 1 drawn from lander's origin
 along it's rotation vector intersects with any of surface segments.
 
-### REFEREE-18 Successful Landing <a name="REFEREE-18"></a>
+##### *REFEREE-18* Successful Landing <a name="REFEREE-18"></a>
 If following conditions are met landing is successful:
 
 | Description                            | ID                        |
@@ -116,5 +116,5 @@ If following conditions are met landing is successful:
 | Vertical speed is under limit          | [REFEREE-15](#REFEREE-15) |
 | Horizontal speed is under limit        | [REFEREE-16](#REFEREE-16) |
 
-### REFEREE-19 Map Origin <a name="REFEREE-19"></a>
+##### *REFEREE-19* Map Origin <a name="REFEREE-19"></a>
 Map origin is considered to be in the bottom left corner.
