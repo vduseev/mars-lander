@@ -36,6 +36,6 @@
   bots in different situations.
 
 ## Use Cases
-* [UC-1 Run Simulation](/documentation/requirements/user_requirements/uc_1)
-* [UC-2 Play Simulation](/documentation/requirements/user_requirements/uc_2)
-* [UC-3 Edit Maps](/documentation/requirements/user_requirements/uc_3)
+* [UC-1 Run Simulation](/documentation/user_requirements/uc_1)
+* [UC-2 Play Simulation](/documentation/user_requirements/uc_2)
+* [UC-3 Edit Maps](/documentation/user_requirements/uc_3)
