@@ -32,8 +32,9 @@ system or by building the project from source. Don't hesitate about the latter
 -- we try hard to make this project buildable in one step on most popular
 platforms.
 
-### Download Binaries
-Get the binaries for your system.
+### I Just Want Binaries
+
+#### Step-1 Get the binaries for your system.
 
 | Platform | Binaries |
 |----------|----------|
@@ -42,23 +43,24 @@ Get the binaries for your system.
 | Windows 10 x64 | |
 | MacOS X 10.5 | |
 
-#### Ubuntu 17.04
+#### Step-2 Is platform specific
+##### Ubuntu 17.04
 Unpack the archive. Note that `##` stands for project version.
 ```
 tar xf mars-lander-x86-64-##.tar
 ```
 
-#### Windows 10
+##### Windows 10
 
-#### MacOS X
+##### MacOS X
 
-#### Other systems
+##### Other systems
 For any other system closely related to the ones above the project should be
 buildable with some tweaks. Though we do not guarantee it.
 
-### Build From Source
+### I Want To Build From Source
 
-#### Get the source code
+#### Step-1 Get the source code
 Clone the repository.
 ```
 git clone git@github.com:vduseev/mars-lander.git
@@ -66,7 +68,7 @@ git clone git@github.com:vduseev/mars-lander.git
 
 or download it https://github.com/vduseev/mars-lander/archive/master.zip.
 
-#### Build it
+#### Step-2 Build it
 Get into the root directory of the project.
 ```
 cd mars-lander
@@ -75,6 +77,19 @@ cd mars-lander
 Run the build script.
 ```
 ./build
+```
+
+#### Step-3 Run it
+Make sure your bot is compiled and executable. The simulator must be able to
+spawn a sub-process using your bot. Our system does not include compilers for
+different languages.
+
+To make your bot binary executable on \*nix systems use this command:
+` chmod a+x <path_to_your_bot> `
+
+Now run the simulator:
+```
+./simulator --bot <path_to_your_bot> --referee mars-lander-referee --map maps/level_1.txt
 ```
 
 ## Full Documentation
