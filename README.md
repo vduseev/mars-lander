@@ -93,5 +93,8 @@ Now run the simulator:
 ```
 
 ## Full Documentation
-* [Requirements](/documentation/requirements)
-* Architecture
+1. [Vision and Scope of the project](/documentation/vision_and_scope)
+2. [User Requirements](/documentation/user_requirements)
+3. [Identified Business Rules](/documentation/business_rules)
+2. [Software Requirements Specification or just The SPEC](/documentation/requirements)
+3. [Architecture](/documentation/architecture)
