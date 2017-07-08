@@ -6,18 +6,22 @@
 
 ## What is This?
 
-That's a full copy of [Mars Lander game from CodinGame](codingame.com/training/expert/mars-lander-episode-3), but designed for the purpose of neural network training.
-When using the CodinGame website it is impossible to test each epoch of your
-network manually. The only solution is to simulate the Mars Lander game locally
-somehow, which is exactly what we did.
+That's a full copy of [Mars Lander game from CodinGame](codingame.com/training/expert/mars-lander-episode-3). However, it is now surrounded by some useful tools designed with
+**neural network development** in mind.
 
-Besides, you can't debug your code on CodinGame, and you can't draw some helpful
-shapes in the visualization to help yourself.
+If you tried to run each epoch of your network manually on CodinGame,
+you would probably be dead on your feet.
+It would be nice, if we could somehow simulate the Mars Lander game.
+In that case we would be able test the bots locally with full control
+over the process. Well, that's exactly what we did here :)
 
-In order to test the idea of neural networks applied to the Mars Lander problem
-we created this simulator with a hope that it will aid others implement much
-more complex approaches, using debugging of their own IDE and powerful
-visualizations of our system.
+Besides, you can debug your code in your own IDE,
+and you can draw some helpful shapes during visualization to see what your
+bot is doing right now.
+
+So, we created this simulator in order to test the idea of neural networks
+applied to the Mars Lander problem, and with the hope that it will aid others
+in their attempt to implement much more complex approaches using tools provided.
 
 ## Demonstration
 Video demonstrations to be added here.
