@@ -12,7 +12,7 @@ That's a full copy of [Mars Lander game from CodinGame](codingame.com/training/e
 If you tried to run each epoch of your network manually on CodinGame,
 you would probably be dead on your feet.
 It would be nice, if we could somehow simulate the Mars Lander game.
-In that case we would be able test the bots locally with full control
+In that case we would be able to test the bots locally with full control
 over the process. Well, that's exactly what we did here :)
 
 Besides, you can debug your code in your own IDE,
