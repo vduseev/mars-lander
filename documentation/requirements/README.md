@@ -1,10 +1,39 @@
 # Mars Lander Simulator Software Requirements Specification
 
-1. [Introduction](/documentation/vision_and_scope)
+## Purpose <a name="purpose"></a>
+This is Mars Lander Simulator 1.0 specification. This SRS constraints functional
+and data requirements along with interfaces and other desirable attributes.
+
+The SRS is intended for:
+* **Developers**  
+* **Users**
+* **Interested readers**
+
+## Document Conventions <a name="document_conventions"></a>
+Following the common style of Mars Lander SImulator documentation GitHub
+flavored Markdown is used.
+
+### Naming Conventions
+| Requirement                 | Label                  |
+|-----------------------------|------------------------|
+| Feature                     | FE-#                   |
+| Use Case                    | UC-#                   |
+
+## Project Scope
+Please refer to the [Vision and Scope](/documentation/vision_and_scope) document.
+
+## References <a name="references"></a>
+* [Initial description of Mars Lander problem](codingame.com/training/expert/mars-lander-episode-3)
+* [Software Requirements Best Practices](amazon.de/dp/0735679665/)
+* [Code Complete 2](amazon.de/dp/0735619670/)
+
+## Table of Contents <a name="table_of_contents"></a>
+1. [Introduction](/documentation/requirements)
    1. [Purpose](/documentation/vision_and_scope/business_requirements)
-   2. Document conventions
-   3. [Project scope](/documentation/vision_and_scope/scope_and_limitations)
-   4. References
+   2. [Document conventions](#document_conventions)
+   3. [Project scope](/documentation/vision_and_scope)
+   4. [References](#references)
+   5. [Table of contents](#table_of_contents)
 2. [Overall description](/documentation/vision_and_scope/business_requirements)
    1. [Product perspective](/documentation/vision_and_scope/business_requirements)
    2. [User classes and characteristics](/documentation/user_requirements)
