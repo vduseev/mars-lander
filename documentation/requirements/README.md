@@ -1,8 +1,9 @@
-# Mars Lander Simulator Software Requirements Specification
+# Mars Lander Simulator - SRS
 
 ## Purpose <a name="purpose"></a>
-This is Mars Lander Simulator 1.0 specification. This SRS constraints functional
-and data requirements along with interfaces and other desirable attributes.
+This is Mars Lander Simulator 1.0 specification. This Software Requirements
+Specification contains functional data requirements along with interfaces
+and other desirable attributes.
 
 The SRS is intended for:
 * **Developers**  
@@ -35,11 +36,10 @@ Please refer to the [Vision and Scope](/documentation/vision_and_scope) document
    4. [References](#references)
    5. [Table of contents](#table_of_contents)
 2. [Overall description](/documentation/vision_and_scope/business_requirements)
-   1. [Product perspective](/documentation/vision_and_scope/business_requirements)
    2. [User classes and characteristics](/documentation/user_requirements)
-   3. Operating environment
-   4. Design and implementation constraints
-   5. [Assumptions and dependencies](/documentation/vision_and_scope/business_requirements#business_assumptions_and_dependencies)
+   3. [Operating environment](/documentation/requirements/overall_description#operating_environment)
+   4. [Design and implementation constraints](/documentation/requirements/overall_description#design_and_implementation_constraints)
+   5. [Assumptions and dependencies](/documentation/requirements/overall_description#assumptions_and_dependencies)
 3. System features
    1. System feature X
       1. Description

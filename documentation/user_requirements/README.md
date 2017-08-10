@@ -1,10 +1,13 @@
 # Mars Lander Simulator Use Cases
 
 ## Actors
+
+<a name="actor_bot_developer"></a>
 * **Bot Developer**
 
   Human developer working with Mars Lander Simulator.
 
+<a name="actor_bot_executable"></a>
 * **Bot Executable**
 
   Compiled bot program or executable script that implements bot logic with
@@ -36,6 +39,7 @@
   bots in different situations.
 
 ## Use Cases
-* [UC-1 Run Simulation](/documentation/user_requirements/uc_1)
-* [UC-2 Play Simulation](/documentation/user_requirements/uc_2)
-* [UC-3 Edit Maps](/documentation/user_requirements/uc_3)
+* [Run Simulation](/documentation/user_requirements/run_simulation)
+* [Play Simulation](/documentation/user_requirements/play_simulation)
+* [Play Simulation](/documentation/user_requirements/debug_bots)
+* [Edit Maps](/documentation/user_requirements/edit_maps)
