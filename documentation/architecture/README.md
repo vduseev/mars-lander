@@ -1,6 +1,7 @@
 # Mars Lander Simulator Architecture
 
 ## General View
+![Running Sequence](https://image.ibb.co/eJxvnF/simulation_bot_debug.png)
 
 ### Referee
 * Referee is an executable program
