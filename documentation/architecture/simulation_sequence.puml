@@ -1,0 +1,79 @@
+@startuml
+
+title
+    Debug and Simulation sequence.
+    Exceptions are not shown.
+end title
+
+actor User
+control Simulation
+participant Bot
+participant Visualization
+participant Referee
+
+'Start debugging'
+User -> Simulation : Debugs **run.py**
+activate Simulation
+
+== Startup ==
+
+'Read config file
+' * map files location
+' * bot scripts location
+Simulation -> Simulation : Reads **config.ini**\n- Bot File\n- Map Files
+
+' Start Bot subprocess
+Simulation -> Bot : Starts Bot\n- **subprocess**\n- **input** to Referee's\n**output**\n- **output** to Referee's\n**input**
+activate Bot
+
+' Start Visualization subprocess
+Simulation -> Visualization : Starts Visualization\n- **subprocess**\n- **input** to Referee's\n**output**
+activate Visualization
+
+' Start Referee subprocess
+Simulation -> Referee : Starts Referee\n- **subprocess**\n- map in **args**
+activate Referee
+
+== Initialization ==
+
+' Referee initializes everyone with the map data
+Referee -> Referee : Reads **Map**\ndata out loud
+
+== Simulation Loop ==
+
+loop Until Referee Stops
+    ' Declares frame data
+    Referee -> Referee : Reads out loud:\n- **X**\n- **Y**\n- **hSpeed**\n- **vSpeed**\n- **fuel**\n- **rotate**\n- **power**
+
+    ' Visualization saves then draws a frame
+    Visualization -> Visualization : Draws **frame**
+
+    ' TODO: Add ability to replay simulation after end'
+
+    ' TODO: Add ability to pause simulation using visualization
+    ' in the middle of the run
+
+    ' First repsonse of the bot
+    Bot -> Bot : Prints\n**first action**
+
+    Simulation -> Simulation : Saves frame\nto **log**
+
+    ' First repsonse of the referee
+    Referee -> Referee : Reads Bot's\nresponse
+end
+
+Referee -> Simulation : Stops simulation\n- **success**\n- **crash**\n- **timeout**\n- **exception**
+deactivate Referee
+
+Simulation -> Bot : Stops Bot process
+deactivate Bot
+
+Simulation -> Visualization : Stops Visualization process
+deactivate Visualization
+
+Simulation -> Simulation : Save **log**
+
+Simulation -> Simulation : __Exit__
+deactivate Simulation
+
+@enduml
